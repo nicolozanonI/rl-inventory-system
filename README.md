@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project investigates the application of reinforcement learning to the replenishment management of a warehouse that handles two different products.
+This work is based on an academic projects for an university course on Reinforcement Learning. It investigates the application of reinforcement learning to the replenishment management of a warehouse that handles two different products.
 
 At the beginning of each simulated day, the warehouse manager must decide:
 
