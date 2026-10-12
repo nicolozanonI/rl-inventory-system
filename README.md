@@ -1023,60 +1023,6 @@ The final results should be added after completing the selected training runs.
 | Holding cost | To be added | To be added | To be added |
 | Shortage cost | To be added | To be added | To be added |
 | Ordering cost | To be added | To be added | To be added |
-
----
-
-# Limitations
-
-The current implementation has several limitations:
-
-1. unmet demand is represented as backlog rather than lost sales;
-2. the two product decisions are encoded as one combined action;
-3. the action space grows quadratically with the maximum order quantity;
-4. the Actor-Critic model is updated once per complete episode;
-5. model hyperparameters are selected manually;
-6. the benchmark parameters are fixed rather than optimized;
-7. demand distributions are assumed to remain stationary;
-8. warehouse capacity is not constrained;
-9. supplier capacity is not constrained;
-10. the model does not include order cancellation or emergency replenishment.
-
----
-
-# Possible Improvements
-
-Potential future extensions include:
-
-- Prioritized Experience Replay;
-- Dueling Double DQN;
-- soft target-network updates;
-- separate action heads for the two products;
-- Proximal Policy Optimization;
-- automatic hyperparameter optimization;
-- optimized `(s, S)` benchmark parameters;
-- supplier-capacity constraints;
-- storage-capacity constraints;
-- nonstationary demand;
-- seasonal demand;
-- service-level metrics;
-- lost-sales modeling;
-- additional products;
-- parallel simulation environments;
-- longer evaluation experiments;
-- separate random-number streams for demand and lead times.
-
----
-
-# Conclusion
-
-This project formulates a two-product warehouse replenishment problem as a reinforcement learning task.
-
-A common discrete-event simulation is used to evaluate:
-
-- a traditional `(s, S)` replenishment policy;
-- a Double DQN agent;
-- an Actor-Critic agent.
-
 The agents observe both the on-hand inventories and the outstanding-order quantities for the two products.
 
 The final comparison considers the total cost and its individual components. This makes it possible to determine whether the performance of a policy is mainly affected by excessive inventory, frequent ordering, or insufficient replenishment leading to shortages.
